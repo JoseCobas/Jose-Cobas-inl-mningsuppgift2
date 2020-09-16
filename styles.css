@@ -1,0 +1,169 @@
+body {
+	background: url(../img/12_col.gif) center top repeat-y;
+	background-size: 90%;
+}
+
+#layout{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /*grid-template-rows:repeat(3,1fr) ;*/
+
+
+    grid-template-areas:
+    "head head head head head head head head head head head head "
+    "box1 box1 box2 box2 box2 box2 box2 box2 box2 box2 box3 box3"
+    "main main main main main main main main main sidebar sidebar sidebar"
+    "footer footer footer footer footer footer footer footer footer footer footer footer" ;
+    
+    max-width: 90%;
+    gap: 2%;
+    margin: 0px auto ;
+}
+.footer{
+    display: grid;
+    grid-template: repeat(4, 1fr);
+    
+    grid-area:footer;
+
+    grid-template-areas: "footer footer footer footer ";
+    grid-gap: 2%;
+    border: 1px solid black;
+    min-height: 230px;
+    
+    padding: 20px;
+}
+.footer div{
+    border: 1px solid black;
+}
+
+
+.head{
+    display: grid;
+    grid-area:head;
+    border: 1px solid black;
+    height: 250px;
+    padding: 20px;
+    
+}
+.box1{
+    display: grid;
+    grid-area:box1;
+    border: 1px solid black;
+    height: 250px;
+    padding: 20px;
+}
+.box2{
+    display: grid;
+    grid-area:box2;
+    border: 1px solid black;
+    height: 250px;
+    padding: 20px;
+}
+.box3{
+    display: grid;
+    grid-area:box3;
+    border: 1px solid black;
+    height: 250px;
+    padding: 20px;
+}
+.main{
+    display: grid;
+    grid-area:main;
+    border: 1px solid black;
+    height: 250px;
+    padding: 20px;
+}
+.sidebar{
+    display: grid;
+    grid-area:sidebar;
+    border: 1px solid black;
+    height: 250px;
+    padding: 20px;
+}
+
+.f1 {
+    grid-area: f1;
+}
+.f2 {
+    grid-area: f2;
+}
+.f3 {
+    grid-area: f3;
+}
+.f4 {
+    grid-area: f4;
+}
+
+.footer {
+    display: grid;
+    grid-area: footer;
+    grid-template-columns:repeat(4, 1fr) ;
+    
+    grid-template-areas:
+     "f1 f2 f3 f4";
+}     
+
+@media screen and (max-width: 1200px ) and (min-width: 960px){
+    #layout{
+        grid-template-areas:
+        "head head head head head head head head head head head head"
+        "box1 box1 box1 box2 box2 box2 box2 box2 box2 box3 box3 box3"
+        "main main main main main main main main sidebar sidebar sidebar sidebar"
+        "footer footer footer footer footer footer footer footer footer footer footer footer" ;
+    }
+}
+
+@media screen and (max-width: 960px ) and (min-width: 768px){
+    #layout{
+        grid-template-rows: repeat(4, minmax(100px, auto));
+        grid-template-areas:
+        "head head head head head head head head head head head head"
+        "box1 box1 box1 box1 box2 box2 box2 box2 box3 box3 box3 box3"
+        "main main main main main main sidebar sidebar sidebar sidebar sidebar sidebar"
+        "footer footer footer footer footer footer footer footer footer footer footer footer"
+        ;
+   
+    }
+    .footer {
+        display: grid;
+        grid-area: footer;
+        grid-template-columns:repeat(2, 1fr) ;
+        grid-template-rows: repeat(2, 100px);
+        
+        grid-template-areas:
+         "f1 f2"
+         "f3 f4";
+    }     
+ 
+}
+@media screen and (max-width:768px){
+    #layout{
+        
+        
+        
+        grid-template-rows: repeat(6, minmax(100px, auto));
+        grid-template-areas:
+        "head head head head head head head head head head head head"
+        "box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1"
+        "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+        "box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3"
+        "main main main main main main main main main main main main"
+        "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar"
+        "footer footer footer footer footer footer footer footer footer footer footer footer "
+        ;
+   
+    }
+    .footer {
+        display: grid;
+        grid-area: footer;
+        grid-template-columns: 1fr ;
+        grid-template-rows: repeat(4,minmax(100px, auto) );
+        min-height:500px ;
+        grid-template-areas:
+         "f1  "
+         "f2  "
+         "f3  " 
+         "f4 ";
+    }     
+ 
+}
